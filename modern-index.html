@@ -3,237 +3,302 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>InSky — Aerial Payload Solutions</title>
+  <title>InSky Aerospace — Heavy-Lift Platforms</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      color-scheme: dark;
-      --bg: #05060a;
-      --panel: #11131b;
-      --panel2: #161821;
-      --accent: #44d7ff;
-      --text: #f5f5f7;
-      --muted: #a3a7b1;
-      font-family: 'Space Grotesk', system-ui, sans-serif;
+      --bg: #03040a;
+      --panel: #0f111b;
+      --accent: #38d0ff;
+      --text: #f4f5f7;
+      --muted: #9ca1b3;
+      font-family: 'Inter', system-ui, sans-serif;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      min-height: 100vh;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
     }
     .container {
       width: min(1200px, 100%);
       margin: 0 auto;
-      padding: 2rem 1.5rem 4rem;
+      padding: 2.5rem 1.5rem 4rem;
     }
-    header {
-      padding: 4rem 0 2rem;
+    .section {
+      margin-top: 3.5rem;
+      padding: 2.5rem;
+      background: var(--panel);
+      border-radius: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.45);
     }
-    header h1 {
-      font-size: clamp(2.8rem, 4vw, 3.8rem);
-      line-height: 1.2;
+    .section h2 {
+      margin-top: 0;
+      font-size: clamp(2.2rem, 3vw, 3rem);
+      line-height: 1.3;
+    }
+    .section p {
+      color: var(--muted);
+      font-size: 1rem;
       margin-bottom: 1rem;
     }
-    header p {
-      max-width: 700px;
+    .divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin: 1.25rem 0;
+    }
+    ul {
+      padding-left: 1.25rem;
+      margin-top: 0;
+      color: var(--text);
+      line-height: 1.7;
+    }
+    ul li {
+      margin-bottom: 0.35rem;
+    }
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.8rem, 3vw, 3.6rem);
+      margin-bottom: 0.6rem;
+    }
+    .hero h3 {
+      font-size: 1.3rem;
+      font-weight: 500;
       color: var(--muted);
-      font-size: 1.1rem;
+      margin-top: 0;
     }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      margin: 2rem 0 1rem;
+    .hero p {
+      max-width: 72ch;
+      margin: 1rem auto;
     }
-    .hero-chip {
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 999px;
-      padding: 0.5rem 1.25rem;
-      font-size: 0.9rem;
-      background: rgba(255,255,255,0.04);
-    }
-    .actions {
-      margin-top: 2rem;
+    .chips {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-top: 1rem;
     }
-    .actions a {
-      padding: 0.85rem 1.6rem;
+    .chip {
+      padding: 0.4rem 1rem;
       border-radius: 999px;
-      font-weight: 600;
-      text-decoration: none;
-      border: 1px solid transparent;
-      transition: transform 0.2s ease, background 0.2s;
-    }
-    .btn-primary {
-      background: var(--accent);
-      color: #030313;
-    }
-    .btn-secondary {
-      border-color: rgba(255,255,255,0.25);
+      border: 1px solid rgba(255,255,255,0.2);
+      font-size: 0.9rem;
       color: var(--text);
     }
-    .btn-primary:hover,
-    .btn-secondary:hover {
-      transform: translateY(-2px);
-    }
-    section {
-      margin-top: 4rem;
-    }
-    .section-title {
-      font-size: 1.1rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.75rem;
-    }
-    .section-body h2 {
-      font-size: clamp(2rem, 3vw, 3rem);
-      margin-bottom: 0.8rem;
-    }
-    .section-body p {
-      color: var(--muted);
-      max-width: 720px;
-    }
     .grid {
-      margin-top: 2rem;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1rem;
+      margin-top: 1.5rem;
     }
-    .card {
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 1.25rem;
-      padding: 1.5rem;
-      background: var(--panel);
-      min-height: 175px;
-    }
-    .card h3 {
-      margin: 0 0 0.5rem;
-      font-size: 1.1rem;
-    }
-    .card p {
-      margin: 0;
-      color: var(--muted);
-    }
-    .split {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .panel {
-      background: var(--panel2);
-      border-radius: 1.5rem;
-      padding: 2rem;
+    .grid .card {
+      background: rgba(255,255,255,0.02);
+      border-radius: 1rem;
+      padding: 1.25rem;
       border: 1px solid rgba(255,255,255,0.05);
     }
     footer {
       margin-top: 4rem;
-      padding: 3rem 0 1rem;
-      color: var(--muted);
+      padding: 2rem 0;
       text-align: center;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .contact-box {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .btn {
+      align-self: flex-start;
+      padding: 0.85rem 1.8rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #020305;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+    .footnote {
+      font-size: 0.85rem;
+      color: var(--muted);
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <header>
-      <div class="section-title">Heavy payload solutions</div>
-      <h1>InSky replaces cranes, convoys, and impossible logistics with air cargo that actually flies where the work is.</h1>
-      <p>Ready for a fresh mission in rugged terrain or a site no crane has ever touched? We lift 220–550 lb into Guatemala ravines, mountain camps, and remote medical zones with the same crew who track the mission every step of the way.</p>
-      <div class="hero-grid">
-        <div class="hero-chip">Replace cranes in 24 hours</div>
-        <div class="hero-chip">220–550 lb platform</div>
-        <div class="hero-chip">Heartbeat-confirmed readiness</div>
-        <div class="hero-chip">Pilot-monitored, BVLOS capable</div>
-      </div>
-      <div class="actions">
-        <a class="btn-primary" href="#contact">Book a mission-ready flight</a>
-        <a class="btn-secondary" href="#missions">See how we solve heavy-lift problems</a>
+    <header class="section hero">
+      <h3>InSky Aerospace</h3>
+      <h1>Advanced Heavy-Lift Drone Platforms and Aerial Operations</h1>
+      <h3>InSky develops high-performance unmanned aerial systems designed for demanding commercial, industrial, and public-safety missions.</h3>
+      <p>The aircraft are engineered to support missions requiring the lifting and transport of large payloads while maintaining operational flexibility and rapid deployment.</p>
+      <p>Our platforms combine high payload capacity, lightweight structural design, and modular power systems to enable reliable aerial work across a wide range of operational environments.</p>
+      <p>All platforms are engineered as practical aerial tools capable of supporting real-world operations including logistics, infrastructure work, inspection, cinematography, emergency response, and specialized aerial services.</p>
+      <div class="chips">
+        <span class="chip">220–550 lb payload</span>
+        <span class="chip">Modular power</span>
+        <span class="chip">Rapid deployment</span>
+        <span class="chip">Professional missions</span>
       </div>
     </header>
 
-    <section id="missions">
-      <div class="section-title">Applications</div>
-      <div class="section-body">
-        <h2>Solutions tuned to the job, not the tech.</h2>
-        <p>Operators choose InSky because road and crane access disappear mid-project. We keep your mission moving with two working aircraft, live telemetry, and pilots who treat every payload like the last mile of a supply chain.</p>
+    <section class="section">
+      <h2>InSky Aircraft Platforms</h2>
+      <p>InSky currently offers two aircraft platforms designed to cover both regulated commercial drone operations and large-scale industrial lifting missions.</p>
+      <p>Both platforms share the same engineering philosophy:</p>
+      <ul>
+        <li>Lightweight structural architecture</li>
+        <li>High payload efficiency</li>
+        <li>Modular payload integration</li>
+        <li>Flexible power systems</li>
+      </ul>
+      <p>All aircraft can operate using battery power, hybrid power systems, or tethered power, depending on mission requirements.</p>
+    </section>
+
+    <section class="section" id="legal">
+      <h2>InSky Legal™</h2>
+      <p>Professional UAV platform engineered to deliver maximum capability within the FAA Part 107 regulatory category.</p>
+      <p>The Legal platform allows operators to perform professional aerial work while remaining within the 55 lb (25 kg) maximum takeoff weight limit that governs most commercial drone operations.</p>
+      <h3>Key Specifications</h3>
+      <ul>
+        <li>14.4 kg ready-to-fly weight without payload</li>
+        <li>Up to 10.5 kg payload capacity while remaining within the 55 lb / 25 kg regulatory limit</li>
+        <li>Designed for professional aerial imaging, inspection, and sensor deployment</li>
+        <li>Rapid deployment architecture for field operations</li>
+        <li>Compatible with battery, hybrid, or tethered power configurations</li>
+      </ul>
+      <p>This combination of low structural weight and useful payload capacity allows operators to deploy professional payload systems while maintaining regulatory compliance.</p>
+    </section>
+
+    <section class="section">
+      <h2>Professional Payload Ecosystem</h2>
+      <p>The Legal platform integrates easily with professional imaging and sensor payloads through a modular payload mounting architecture compatible with widely used cinematography accessory standards.</p>
+      <p>The aircraft supports:</p>
+      <ul>
+        <li>12 mm dual-rail accessory systems commonly used in professional camera rigs</li>
+        <li>Toad-style quick-release mounting systems used in aerial cinematography workflows</li>
+      </ul>
+      <p>This architecture allows rapid integration of professional payload systems including:</p>
+      <ul>
+        <li>Stabilized camera gimbals</li>
+        <li>LiDAR and photogrammetry sensors</li>
+        <li>Broadcast and cinematography cameras</li>
+        <li>Inspection and monitoring equipment</li>
+        <li>Lighting systems</li>
+        <li>Specialized mission payloads</li>
+      </ul>
+      <p>Because these mounting systems are widely used throughout the professional cinematography industry, operators can access a large ecosystem of high-end accessories and payload components already available on the market.</p>
+      <p>This approach allows users to deploy proven payload equipment without being restricted to proprietary mounting solutions.</p>
+      <div class="footnote">
+        References to mounting interfaces commonly used within the professional cinematography ecosystem are provided solely to describe mechanical compatibility with widely used accessory standards. InSky Aerospace is not affiliated with, endorsed by, or associated with any third-party manufacturers whose products may be compatible with these interfaces.
       </div>
+    </section>
+
+    <section class="section">
+      <h2>InSky Hevi™</h2>
+      <p>Heavy-lift aerial platform designed for industrial operations and large-payload aerial work.</p>
+      <p>The Hevi platform expands the capabilities of unmanned aircraft into applications that traditionally required helicopters or ground-based lifting equipment.</p>
+      <h3>Key Capabilities</h3>
+      <ul>
+        <li>Up to 250 kg payload capacity</li>
+        <li>Modular airframe architecture supporting multiple mission configurations</li>
+        <li>Compatible with battery, hybrid, or tethered power systems</li>
+        <li>Designed for demanding operational environments</li>
+      </ul>
+      <p>Hevi aircraft support a wide range of industrial and operational missions including:</p>
+      <ul>
+        <li>Heavy equipment transport</li>
+        <li>Infrastructure construction support</li>
+        <li>Utility and powerline operations</li>
+        <li>Industrial logistics</li>
+        <li>Emergency response and disaster support</li>
+        <li>Specialized aerial work</li>
+      </ul>
+      <p>By combining large payload capacity with modular payload integration, the Hevi platform enables aerial solutions that were previously difficult or impractical using conventional UAV systems.</p>
+    </section>
+
+    <section class="section">
+      <h2>Modular Power Systems</h2>
+      <p>InSky aircraft are designed with flexible power architectures that allow operators to optimize performance for different operational requirements.</p>
       <div class="grid">
         <div class="card">
-          <h3>Rugged infrastructure</h3>
-          <p>Deliver heavy construction materials into Guatemala jungle roads, arctic mining camps, or canyon bridge sites without waiting for lifted cranes.</p>
+          <h3>Battery Operation</h3>
+          <p>For quiet, mobile operations and rapid deployment missions.</p>
         </div>
         <div class="card">
-          <h3>Emergency response</h3>
-          <p>Move med kits, power units, and linens into floodplains or wildfire zones in a single flight, keeping crews focused on the people they save.</p>
+          <h3>Hybrid Power Systems</h3>
+          <p>For extended endurance missions requiring long flight durations.</p>
         </div>
         <div class="card">
-          <h3>Scientific + defense</h3>
-          <p>Relocate oversized sensors, radars, and cameras with a predictable lift cycle and the operators who already know your flight plan.</p>
+          <h3>Tethered Power Operation</h3>
+          <p>For persistent aerial tasks such as communications relay, lighting, monitoring, and surveillance.</p>
         </div>
-        <div class="card">
-          <h3>Industrial logistics</h3>
-          <p>Swap forklifts for flight and keep assembly lines supplied when ground access is clogged—or when the job is offshore and the clock is ticking.</p>
-        </div>
+      </div>
+      <p>This flexibility allows operators to configure aircraft performance based on mission duration, payload weight, and operational constraints.</p>
+    </section>
+
+    <section class="section">
+      <h2>Lightweight Structural Engineering</h2>
+      <p>InSky aircraft are engineered around high-efficiency structural architectures designed to maximize useful lifting capability.</p>
+      <ul>
+        <li>Advanced composite airframe structures</li>
+        <li>Structural optimization for lifting efficiency</li>
+        <li>Lightweight mechanical architecture</li>
+        <li>Modular mission integration</li>
+      </ul>
+      <p>This approach allows InSky aircraft to achieve significantly higher payload capability relative to structural weight, enabling a larger proportion of aircraft mass to be dedicated to useful payload rather than airframe structure.</p>
+    </section>
+
+    <section class="section">
+      <h2>Commercial and Industrial Drone Services</h2>
+      <p>InSky aircraft are designed to support a wide range of operational missions across multiple industries.</p>
+      <ul>
+        <li>Infrastructure inspection</li>
+        
+        <li>Industrial operations</li>
+        <li>Cinematography and aerial imaging</li>
+        <li>Utility support operations</li>
+        <li>Emergency response missions</li>
+        <li>Specialized aerial logistics</li>
+      </ul>
+      <p>These systems are designed to function as working aerial platforms capable of supporting organizations that depend on unmanned aircraft for real operational tasks.</p>
+    </section>
+
+    <section class="section">
+      <h2>Engineering and Manufacturing</h2>
+      <p>InSky focuses on the development of purpose-built aerial robotic systems designed for practical deployment.</p>
+      <ul>
+        <li>Reliable operational performance</li>
+        <li>High payload capability</li>
+        <li>Efficient deployment and transport</li>
+        <li>Adaptability across mission types</li>
+      </ul>
+      <p>This engineering approach allows InSky to develop aircraft that expand the range of tasks that can be performed safely and efficiently using unmanned aerial systems.</p>
+    </section>
+
+    <section class="section">
+      <h2>Contact</h2>
+      <div class="contact-box">
+        <p>For information about aircraft platforms, deployment capabilities, or operational partnerships:</p>
+        <a class="btn" href="mailto:info@insky.aero">Email InSky Aerospace</a>
+        <p class="footnote">We respond within one heartbeat cycle (~30 minutes) and keep every request on record for the crew to confirm availability.</p>
       </div>
     </section>
 
-    <section>
-      <div class="section-title">Two machines, one disciplined service</div>
-      <div class="split">
-        <div class="panel">
-          <h2>Hevi</h2>
-          <p>Hevi is the heavy-lift craft that carries 220–550 lb payloads with modular racks you can swap in under 20 minutes. We pre-load mission kits, log every change, and treat every configuration as verified before we climb into the air.</p>
-          <p>A platform as dependable as a crane—but deployable anywhere a landing pad can be cleared.</p>
-        </div>
-        <div class="panel">
-          <h2>Legal</h2>
-          <p>Legal carries up to 55 lb, stays inside Part 107, and still taps into the same 12 mm quick-release ecosystem your teams already trust.</p>
-          <p>When lifting tight loads for film, inspection, or tactical work, Legal keeps you compliant while moving payloads with AltaX-level agility.</p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-title">Service that keeps pace</div>
-      <div class="grid">
-        <div class="card">
-          <h3>Memory-backed ops</h3>
-          <p>We log every brief, every payload change, and every pilot confirmation so you can reopen that exact mission anytime.</p>
-        </div>
-        <div class="card">
-          <h3>Heartbeat monitoring</h3>
-          <p>Every 30 minutes, our cron ensures the aircraft and crew are ready. When it’s green, you receive a “Tasks Complete” confirmation; when we restart something, it stays internal.</p>
-        </div>
-        <div class="card">
-          <h3>Pilot crew</h3>
-          <p>Two aircraft, two crews, one operations rhythm—so missions keep moving while you focus on the outcome.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="panel">
-        <h2>Book a monitored mission</h2>
-        <p>Tell us about the cranes you want to replace, the gorge you need to cross, or the emergency site that needs supplies now. We’ll respond within one heartbeat cycle (~30 minutes) with availability and next steps.</p>
-        <p class="hero-chip" style="margin-top:1rem;">NDA and recurring service programs available.</p>
-        <div class="actions" style="margin-top:1rem;">
-          <a class="btn-primary" href="#">Request deployment review</a>
-        </div>
-      </div>
-    </section>
+    <footer>
+      © 2025 InSky Aerospace — Real aircraft. Real missions. Real partners.
+    </footer>
   </div>
-  <footer>
-    © 2025 InSky · Built for teams replacing cranes, convoys, and impossibility with two reliable aircraft.
-  </footer>
 </body>
 </html>
