@@ -3,614 +3,148 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>InSky — Heavy-Lift Drone Systems</title>
-  <meta name="description" content="Advanced aerial platforms for 100–250 kg payloads." />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>InSky — High-Capability Aerial Platforms</title>
+  <meta name="description" content="InSky develops high-capability unmanned aircraft for payload, inspection, public-safety, and demanding field operations." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400&display=swap" rel="stylesheet">
-
-  <style>
-    html { scroll-behavior: smooth; scroll-padding-top: var(--header-h, 0px); }
-    @media (prefers-reduced-motion: reduce) { [data-parallax]{ transform:none !important; } }
-    :root{ --font-body: "Titillium Web", "Segoe UI", SegoeUI, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", system-ui, -apple-system, sans-serif; --font-logo: "BankGothic LT BT", "Bank Gothic", "BankGothic Md BT", "BankGothic", "Michroma", "Orbitron", "Eurostile", sans-serif; }
-    body{ font-family: var(--font-body); font-weight: 300; }
-    h1, h2, h3, h4, h5, h6 { font-weight: 400 !important; }
-    .font-bank{ font-family: var(--font-logo); letter-spacing:.06em; }
-    :root { --divider-color: rgba(255,255,255,0.92); --divider-thickness: 1px; --divider-glow: rgba(255,255,255,0.18); --divider-glow-blur: 0px; --divider-left-stop: 3%; --divider-right-stop: 97%; }
-    .section-frame{ position: relative; }
-    .section-frame::before, .section-frame::after{ content:""; position:absolute; left:0; right:0; height: var(--divider-thickness); pointer-events:none; z-index:5; background: linear-gradient(90deg, transparent 0%, var(--divider-color) var(--divider-left-stop), var(--divider-color) var(--divider-right-stop), transparent 100%); box-shadow: 0 0 var(--divider-glow-blur) var(--divider-glow); }
-    .section-frame::before{ top:0; }
-    .section-frame::after{ bottom:0; }
-    .section-full{ min-height: 100svh; }
-    .parallax-layer{ position:absolute; left: calc(-1 * var(--overscanX, 0%)); right: calc(-1 * var(--overscanX, 0%)); top: calc(-1 * var(--overscanY, var(--overscan, 15%))); bottom: calc(-1 * var(--overscanY, var(--overscan, 15%))); background-size: cover; background-position: center var(--posY, 50%); background-repeat: no-repeat; will-change: transform; transform-origin: center center; transform: translate3d(0, var(--tY, 0), 0) scale(var(--scale, 1)); }
-    @media (min-width: 640px){ .parallax-layer{ background-position: center var(--posY-sm, var(--posY,50%)); } }
-    @media (min-width: 768px){ .parallax-layer{ background-position: center var(--posY-md, var(--posY-sm, var(--posY,50%))); } }
-    @media (min-width: 1024px){ .parallax-layer{ background-position: center var(--posY-lg, var(--posY-md, var(--posY-sm, var(--posY,50%)))); } }
-  </style>
-
-  <style>
-    .popup-toast { position: fixed; right: 20px; bottom: 20px; max-width: 320px; width: calc(100vw - 40px); z-index: 9999; transform: translate(120%, 0); opacity: 0; pointer-events: none; transition: transform 300ms ease, opacity 300ms ease; font-family: var(--font-body, system-ui, sans-serif); }
-    .popup-toast.show { transform: translate(0, 0); opacity: 1; pointer-events: auto; }
-    .popup-card { position: relative; padding: 16px 44px 16px 16px; border-radius: 0.75rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); color: #fff; line-height: 1.5; box-shadow: 0 4px 20px rgba(0,0,0,0.35); }
-    .popup-card strong { font-weight: 500; }
-    .popup-close { position: absolute; top: 8px; right: 10px; border: none; background: transparent; font-size: 20px; line-height: 1; cursor: pointer; color: rgba(255, 255, 255, 0.6); }
-    .popup-close:hover { color: #fff; }
-    @media (prefers-reduced-motion: reduce) { .popup-toast { transition: none; transform: none !important; opacity: 1 !important; } }
-  </style>
-
-  <style>
-    @media (max-width: 767.98px) { .hero-mobile-right { background-position: 85% var(--posY, 50%) !important; } }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
 </head>
-<body class="min-h-screen bg-slate-900 text-white">
-  <header class="border-b border-white/10 bg-slate-900/30 backdrop-blur-sm sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="#top" class="flex items-center gap-3" aria-label="InSky Home">
-        <img src="./logo-insky2.png" alt="InSky" class="h-8 sm:h-10 md:h-12 lg:h-14 w-auto select-none"/>
-      </a>
-      <nav class="hidden md:flex gap-8 text-gray-300 text-base lg:text-lg tracking-wide">
-        <a href="#applications" class="hover:text-white">Applications</a>
-        <a href="#platform" class="hover:text-white">Hevi Platform</a>
-        <a href="#technology" class="hover:text-white">Technology</a>
-        <a href="legal.html" class="hover:text-white">Legal Platform</a>
-        <a href="#contact" class="hover:text-white">Contact</a>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="./index.html" class="brand"><img src="./logo-insky2.png" alt="InSky"></a>
+      <nav class="nav-links">
+        <a href="./legal.html">Legal</a>
+        <a href="./performance.html">Performance</a>
+        <a href="./hevi.html">Hevi</a>
+        <a href="./applications.html">Applications</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <a href="#contact" class="hidden md:inline-flex rounded-lg bg-blue-600 hover:bg-blue-700 px-4 py-2 font-medium">Get a Quote</a>
-      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-lg border border-white/10 px-3 py-2 text-gray-200">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
-      </button>
-    </div>
-    <div id="mobileNav" class="md:hidden hidden border-t border-white/10">
-      <nav class="px-4 py-3 flex flex-col gap-3 text-gray-300 text-lg">
-        <a href="#applications" class="hover:text-white">Applications</a>
-        <a href="#platform" class="hover:text-white">Hevi Platform</a>
-        <a href="#technology" class="hover:text-white">Technology</a>
-        <a href="legal.html" class="hover:text-white">Legal Platform</a>
-        <a href="#contact" class="hover:text-white">Contact</a>
-        <a href="#contact" class="mt-2 inline-flex rounded-lg bg-blue-600 hover:bg-blue-700 px-4 py-2 font-medium">Get a Quote</a>
-      </nav>
+      <a class="cta" href="#contact">Discuss a mission</a>
     </div>
   </header>
 
   <main>
-    <section id="top" class="section-frame section-full relative min-h-[100vh] flex items-center justify-center md:items-start md:justify-start overflow-hidden pt-0 md:pt-48">
-      <div class="parallax-layer hero-mobile-right filter brightness-110" data-parallax data-speed="1.5" data-bias="-0.005" data-scale-portrait="0.80" data-scale-landscape="1" data-overscanx-portrait="12%" data-overscany-portrait="32%" style="--overscan:10%; background-image:url('./C1.webp');"></div>
-      <div class="absolute inset-0 bg-gradient-to-b from-slate-900/35 via-slate-900/40 to-slate-900/45"></div>
-      <div class="relative z-10 px-6 max-w-4xl text-left mr-auto md:ml-80">
-        <p class="text-sm uppercase tracking-[0.4em] text-blue-200 mb-4">Mission telemetry + heartbeat reliability for 100–250 kg heavy lift</p>
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent leading-snug pb-1 md:pb-2">
-          InSky keeps complex cargo missions disciplined, predictable, and ready-to-launch.
-        </h1>
-        <p class="text-xl text-gray-200 mb-8">Every build flows through our memory-backed ops stack so every spec, sensor, and pilot briefing is recorded before launch. Hevi stays synced with deployment telemetry, not just bench tests.</p>
-        <p class="text-sm text-gray-300/80 mb-6">Heartbeat cron jobs confirm readiness, nightly reviews lock in build intent, and human pilots know exactly when systems are mission-ready.</p>
-        <div class="flex flex-wrap gap-3 text-sm text-slate-200/90 mb-8">
-          <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 backdrop-blur-sm">✅ Memory-backed pre-flight logs</span>
-          <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 backdrop-blur-sm">⏱️ Heartbeat cron confirms availability</span>
-          <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 backdrop-blur-sm">🛰️ BVLOS capable, pilot overseen</span>
-          <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 backdrop-blur-sm">📡 24/7 mission telemetry</span>
+    <section class="hero">
+      <div class="container grid-hero">
+        <div>
+          <span class="eyebrow">InSky</span>
+          <h1>High-capability unmanned aircraft for payload, inspection, and demanding field operations</h1>
+          <p class="lead">InSky develops specialized aerial platforms for operators who need more capability than conventional professional drones can deliver.</p>
+          <p>Our aircraft are built around useful payload, lightweight structural design, modular integration, and practical field deployment. The goal is not to produce generic drone platforms. It is to build more capable aircraft for operators who need stronger payload flexibility, broader mission utility, and more serious performance.</p>
+          <div class="button-row">
+            <a class="cta" href="#contact">Discuss a mission</a>
+            <a class="cta secondary" href="./legal.html">Explore Legal</a>
+          </div>
+          <div class="stat-grid">
+            <div class="stat"><div class="stat-label">Lead platform</div><div class="stat-value">Legal</div></div>
+            <div class="stat"><div class="stat-label">Empty weight</div><div class="stat-value">9.8 kg</div></div>
+            <div class="stat"><div class="stat-label">107 payload</div><div class="stat-value">10.3 kg</div></div>
+            <div class="stat"><div class="stat-label">Max payload</div><div class="stat-value">30 kg</div></div>
+            <div class="stat"><div class="stat-label">Endurance range</div><div class="stat-value">12–70 min</div></div>
+          </div>
         </div>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="#contact" class="inline-flex items-center justify-center text-lg px-8 py-4 rounded-xl border border-white/20 hover:bg-white/10 font-light">See a mission-ready deployment</a>
-          <a href="legal.html" class="inline-flex items-center justify-center text-lg px-8 py-4 rounded-xl bg-white text-slate-900 hover:bg-gray-100 font-semibold">Read how we monitor missions</a>
+        <div class="hero-card">
+          <div class="hero-image"><img src="./assets/legal-hero.png" alt="InSky Legal render"></div>
         </div>
-        <p class="text-xs text-gray-400/70 mt-4">Ops transparency tied to the heartbeat cron—expect a response within one cycle.</p>
       </div>
     </section>
 
-    <section id="legal-brief" class="section-frame section-full relative min-h-[70vh] flex items-center justify-center px-4 py-16">
-      <div class="relative max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-        <div class="space-y-4">
-          <p class="text-sm uppercase tracking-[0.4em] text-blue-200">Legal platform</p>
-          <h2 class="text-3xl font-bold">Competition-level agility in the <span class="text-blue-300">sub‑55 lb</span> class.</h2>
-          <p class="text-gray-200">Legal is tuned to contest the Freefly AltaX by delivering near double the performance while staying within the FAA Part 107 friendly weight envelope that end users expect for their tactical missions. It accepts the same 12 mm rail accessories and Freefly's Toad-in-the-Hole connector so customers can plug into their existing payload suites.</p>
-          <p class="text-sm text-gray-400">(Need a waiver? Legal also supports up to 44 kg MTOW when you want maximum endurance instead of regulatory minimums.)</p>
-          <a href="legal.html" class="inline-flex items-center gap-2 text-base font-medium text-white underline-offset-4 hover:underline">View Legal story <span aria-hidden="true">→</span></a>
+    <section class="section">
+      <div class="container two-col">
+        <div>
+          <span class="eyebrow">Lead platform</span>
+          <h2>InSky Legal™</h2>
+          <p>A compact high-capability professional UAV platform designed for payload, inspection, imaging, and specialized field operations.</p>
+          <p>Legal is InSky’s lead near-term commercial platform. It is designed to combine low structural weight, strong useful payload capability, and a broad mission envelope in a compact professional aircraft.</p>
+          <div class="button-row">
+            <a class="cta" href="./legal.html">View Legal</a>
+          </div>
         </div>
-        <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-6 backdrop-blur-xl">
-          <h3 class="text-lg font-semibold mb-3">Quick facts</h3>
-          <ul class="space-y-2 text-sm text-gray-200">
-            <li><strong class="text-white">Payload:</strong> up to 55 lb (25 kg) compliant</li>
-            <li><strong class="text-white">Weight:</strong> 9.9 kg empty / ~15 kg ready</li>
-            <li><strong class="text-white">Accessories:</strong> 12 mm rail + Freefly's Toad-in-the-Hole</li>
-            <li><strong class="text-white">Options:</strong> dual IMU, safety parachute, premium sensors</li>
+        <div class="specs">
+          <div class="spec"><strong>Empty weight</strong><span>9.8 kg</span></div>
+          <div class="spec"><strong>Ready to fly, no payload</strong><span>14.6 kg</span></div>
+          <div class="spec"><strong>FAR Part 107 payload</strong><span>10.3 kg</span></div>
+          <div class="spec"><strong>Absolute maximum payload</strong><span>30 kg</span></div>
+          <div class="spec"><strong>Endurance</strong><span>12 min at 30 kg</span></div>
+          <div class="spec"><strong>Endurance</strong><span>70 min empty</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Mission applications</span>
+        <h2>Built for practical field use</h2>
+        <div class="cards-3">
+          <div class="card"><h3>Logistics and aerial transport</h3><p>For missions where payload delivery matters more than camera-first drone assumptions, InSky platforms are being developed to support compact logistics, field transport, and difficult-access operations.</p></div>
+          <div class="card"><h3>Public safety and emergency response</h3><p>Payload flexibility and rapid deployment can create value in public-safety support, emergency logistics, and specialized field response missions.</p></div>
+          <div class="card"><h3>Infrastructure inspection</h3><p>Inspection work often benefits from aircraft that can carry more capable payloads, sensors, and support equipment without being forced into narrow platform limitations.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container two-col">
+        <div>
+          <span class="eyebrow">Engineering approach</span>
+          <h2>Engineered for useful payload</h2>
+          <p>InSky aircraft are designed to maximize practical capability: more useful payload, less wasted structure, and support for real mission integration.</p>
+          <p>Depending on mission requirements, platform direction may include battery, hybrid, and tethered power architectures.</p>
+          <p>Legal is also being developed for compatibility with established professional accessory workflows, reducing adoption friction for operators already using a mature payload ecosystem.</p>
+        </div>
+        <div class="card">
+          <h3>What makes the platform different</h3>
+          <ul class="list">
+            <li>Low structural weight with strong useful payload capability</li>
+            <li>Broad operating envelope across different mission profiles</li>
+            <li>Compatibility with professional field workflows</li>
+            <li>Power architecture flexibility for different mission durations</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section id="applications" class="section-frame section-full relative min-h-[100vh] flex items-center overflow-hidden">
-      <div class="parallax-layer opacity-60 filter brightness-110" data-parallax data-speed="1.5" data-bias="0.05" data-scale-portrait="0.75" data-scale-landscape="1" data-overscanx-portrait="12%" data-overscany-portrait="32%" style="--overscan:18%; background-image:url('./C2.jpg');"></div>
-      <div class="relative max-w-7xl mx-auto px-4 w-full">
-        <h2 class="text-4xl font-bold text-center mb-4">Critical Applications</h2>
-        <p class="text-center text-gray-100 mb-12 max-w-2xl mx-auto">Engineered for DARPA Lift Challenge-level missions where heartbeat-verified logistics, emergency response, and industrial payloads all depend on predictable performance.</p>
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="p-6 rounded-2xl bg-slate-800/30 border border-slate-700">
-            <h3 class="text-xl font-semibold text-center mb-2">High-Capacity Cargo</h3>
-            <p class="text-gray-100 text-center mb-4">Payloads from 100–250 kg for remote mining, infrastructure, and disaster logistics missions that need more lift than a truck and a helipad—scheduled through our heartbeat ops loop.</p>
-            <ul class="text-sm text-gray-120 space-y-1">
-              <li>• Remote site supply delivery with mission telemetry</li>
-              <li>• Construction material transport kept on schedule</li>
-              <li>• Faster than ground transport for critical nodes</li>
-            </ul>
-          </div>
-          <div class="p-6 rounded-2xl bg-slate-800/30 border border-slate-700">
-            <h3 class="text-xl font-semibold text-center mb-2">Rescue &amp; Emergency</h3>
-            <p class="text-gray-100 text-center mb-4">Life-saving equipment, power, and medical supplies outbound to isolated disaster zones—more aid per trip, faster than ground convoys, and tracked through our memory stack.</p>
-            <ul class="text-sm text-gray-120 space-y-1">
-              <li>• More aid per trip with predictive readiness</li>
-              <li>• Rapid deployment to inaccessible zones</li>
-              <li>• Extreme environment operations on a verified schedule</li>
-            </ul>
-          </div>
-          <div class="p-6 rounded-2xl bg-slate-800/30 border border-slate-700">
-            <h3 class="text-xl font-semibold text-center mb-2">Special Missions</h3>
-            <p class="text-gray-100 text-center mb-4">Scientific sensors, mobile power stations, and defense payloads that need rapid relocation or tethered endurance—connected to the same heartbeat/monitoring backbone as every customer mission.</p>
-            <ul class="text-sm text-gray-120 space-y-1">
-              <li>• Oversized scientific equipment with flight telemetries</li>
-              <li>• Heavy radar and sensor payloads</li>
-              <li>• Tethered power for indefinite hover</li>
-            </ul>
-          </div>
+    <section class="section">
+      <div class="container two-col">
+        <div class="band">
+          <span class="eyebrow">Performance</span>
+          <h2>Built by a performance-aircraft company</h2>
+          <p>InSky is participating in the DARPA Lift challenge with a dedicated aircraft program built around demanding payload, endurance, and efficiency targets.</p>
+          <p>That effort reflects the same principles behind the company’s broader aircraft development: disciplined engineering, practical validation, and serious performance goals.</p>
+          <a class="cta secondary" href="./performance.html">View Performance page</a>
         </div>
-      </div>
-    </section>
-
-    <section id="platform" class="section-frame section-full relative min-h-[100vh] flex items-center justify-center text-center overflow-hidden">
-      <div class="parallax-layer" data-parallax data-speed="1.5" data-bias="0.1" data-scale-portrait="0.78" data-scale-landscape="1" data-overscanx-portrait="14%" data-overscany-portrait="34%" style="--overscan:20%; background-image:url('./C3.jpg');"></div>
-      <div class="absolute inset-0 bg-slate-900/40"></div>
-      <div class="relative z-10 max-w-5xl px-6">
-        <p class="text-sm uppercase tracking-[0.4em] text-blue-200 mb-4">Hevi platform</p>
-        <h2 class="text-4xl font-bold mb-4">Maximum payload, controlled footprint.</h2>
-        <p class="text-xl text-gray-200 mb-8">Designed for 100 kg missions where rapid setup, modular power, and robust avionics are non-negotiable—and every configuration is logged in the heartbeat/ memory stack so operators know exactly what will fly.</p>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
-          <div class="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-center">
-            <div class="text-xs uppercase tracking-wide text-slate-300/80">Payload</div>
-            <div class="text-lg font-semibold">100 kg</div>
-          </div>
-          <div class="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-center">
-            <div class="text-xs uppercase tracking-wide text-slate-300/80">Endurance (empty)</div>
-            <div class="text-lg font-semibold">29 min<small class="opacity-70"> (dual)</small></div>
-          </div>
-          <div class="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-center">
-            <div class="text-xs uppercase tracking-wide text-slate-300/80">Wind</div>
-            <div class="text-lg font-semibold">12 m/s</div>
-          </div>
-          <div class="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-center">
-            <div class="text-xs uppercase tracking-wide text-slate-300/80">Altitude (no payload)</div>
-            <div class="text-lg font-semibold">6000 m</div>
-          </div>
-        </div>
-        <div class="grid md:grid-cols-3 gap-6 text-center">
-          <div class="bg-slate-800/70 border border-slate-700 rounded-xl p-5"><h4 class="font-semibold">Up to 100 kg Payload</h4><p class="text-gray-300 text-sm">Payload assignments are recorded and confirmed before flight so the mission timeline matches what ops reviewed.</p></div>
-          <div class="bg-slate-800/70 border border-slate-700 rounded-xl p-5"><h4 class="font-semibold">Configurable Architecture</h4><p class="text-gray-300 text-sm">4, 8, or heavy multi-rotor builds with modular decks, each configuration signed-off via the heartbeat cron.</p></div>
-          <div class="bg-slate-800/70 border border-slate-700 rounded-xl p-5"><h4 class="font-semibold">Hybrid/Tethered Power</h4><p class="text-gray-300 text-sm">Battery, hybrid generator, or tethered loadouts are all logged so endurance plans stay in sync with mission telemetry.</p></div>
-        </div>
-      </div>
-      <button id="specsToggle" class="flex items-center gap-2 absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-3 py-2 rounded-l-xl backdrop-blur-md">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6h8v2h-8V6zm0 10h8v2h-8v-2zM6 11h12v2H6v-2z"/></svg>
-        Specs
-      </button>
-      <aside id="specsPanel" class="absolute top-0 right-0 h-full w-[92vw] md:w-[420px] z-20 translate-x-full transition-transform duration-500">
-        <div class="h-full overflow-y-auto bg-slate-900/95 border-l border-white/10 backdrop-blur-md p-6">
-          <div class="flex items-center justify-between mb-4">
-            <h3 class="text-xl font-semibold">Specs — Small Quad</h3>
-            <button id="specsClose" class="inline-flex items-center justify-center rounded-md border border-white/20 px-2 py-1 text-gray-200 hover:bg-white/10">Close ✕</button>
-          </div>
-          <dl class="text-sm leading-relaxed text-gray-200 space-y-3">
-            <div><dt class="font-semibold text-gray-100">Aircraft</dt><dd>Small Quad</dd></div>
-            <div><dt class="font-semibold text-gray-100">Weight</dt><dd>21.4 kg (without battery)<br>38.0 kg (with two Tattu Pro 12S1P batteries)</dd></div>
-            <div><dt class="font-semibold text-gray-100">Max Takeoff Weight</dt><dd>88 kg (with cargo at sea level)</dd></div>
-            <div><dt class="font-semibold text-gray-100">Dimensions (unfolded)</dt><dd>2805 × 2870 × 428 mm (L×W×H)</dd></div>
-            <div><dt class="font-semibold text-gray-100">Dimensions (folded)</dt><dd>999 × 784 × 230 mm (L×W×H)</dd></div>
-            <div><dt class="font-semibold text-gray-100">Folding Method</dt><dd>Towards body</dd></div>
-            <div><dt class="font-semibold text-gray-100">Loadable Battery Quantity</dt><dd>2</dd></div>
-            <hr class="border-white/10 my-3">
-            <div><dt class="font-semibold text-gray-100">Hovering Endurance (empty, max battery)</dt><dd>29 mins (dual battery)<br>15 mins (single battery)</dd></div>
-            <div><dt class="font-semibold text-gray-100">Hovering Endurance (max weight, max battery)</dt><dd>15 mins (50 kg load, dual battery)<br>9 mins (35 kg load, single battery)</dd></div>
-            <div><dt class="font-semibold text-gray-100">Max Flight Distance (empty, max battery)</dt><dd>28 km (dual battery)<br>12 km (single battery)</dd></div>
-            <div><dt class="font-semibold text-gray-100">Max Flight Distance (max weight, max battery)</dt><dd>16 km (50 kg load, dual battery)<br>8 km (35 kg load, single battery)</dd></div>
-            <div><dt class="font-semibold text-gray-100">Max Flight Time (max weight, max battery)</dt><dd>18 mins (50 kg load, dual battery)<br>9 mins (35 kg load, single battery)</dd></div>
-            <hr class="border-white/10 my-3">
-            <div><dt class="font-semibold text-gray-100">Operating Temperature</dt><dd>-20° to 45° C</dd></div>
-            <div><dt class="font-semibold text-gray-100">Ingress Protection</dt><dd>IP54</dd></div>
-            <div><dt class="font-semibold text-gray-100">Hovering Accuracy</dt><dd>RTK enabled: ±10 cm horizontal, ±10 cm vertical<br>RTK disabled: ±150 cm horizontal, ±30 cm vertical (radar enabled: ±10 cm)</dd></div>
-            <div class="grid grid-cols-2 gap-3">
-              <div><dt class="font-semibold text-gray-100">Max Pitch Angle</dt><dd>30°</dd></div>
-              <div><dt class="font-semibold text-gray-100">Max Ascent Speed</dt><dd>5 m/s</dd></div>
-              <div><dt class="font-semibold text-gray-100">Max Descent Speed</dt><dd>2 m/s (vertical); — (tilted)</dd></div>
-              <div><dt class="font-semibold text-gray-100">Max Horizontal Speed</dt><dd>20 m/s</dd></div>
-              <div><dt class="font-semibold text-gray-100">Max Flight Altitude</dt><dd>6000 m (without payload)</dd></div>
-              <div><dt class="font-semibold text-gray-100">Max Wind Resistance</dt><dd>12 m/s</dd></div>
-            </div>
-            <hr class="border-white/10 my-3">
-            <div><dt class="font-semibold text-gray-100">Propulsion — Stator Size</dt><dd>1300 × 25 mm</dd></div>
-            <div><dt class="font-semibold text-gray-100">Motor KV</dt><dd>53 rpm/V</dd></div>
-            <div><dt class="font-semibold text-gray-100">Max Motor Power</dt><dd>6000 W / rotor</dd></div>
-            <div><dt class="font-semibold text-gray-100">Propellers</dt><dd>Carbon fiber composite; 54 inch; foldable double-blade</dd></div>
-            <div><dt class="font-semibold text-gray-100">Main-rotor Diameter</dt><dd>1375 mm</dd></div>
-            <div><dt class="font-semibold text-gray-100">Rotor Quantity</dt><dd>4 or 8</dd></div>
-          </dl>
-        </div>
-      </aside>
-    </section>
-
-    <section id="technology" class="section-frame relative min-h-[100vh] flex items-center overflow-hidden">
-      <div class="parallax-layer opacity-60" data-parallax data-speed="1.5" data-bias="0.1" data-scale-portrait="0.82" data-scale-landscape="1" data-overscanx-portrait="12%" data-overscany-portrait="32%" style="--overscan:18%; background-image:url('./C4.jpg');"></div>
-      <div class="relative max-w-7xl mx-auto px-4 text-center w-full">
-        <h2 class="text-4xl font-bold mb-4">Advanced Technology</h2>
-        <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">Built on proven technologies for reliability, safety, and performance.</p>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="p-6 rounded-2xl bg-slate-800/80 border border-slate-700"><h3 class="text-lg font-semibold mb-2">Mission Telemetry Stack</h3><p class="text-gray-400 text-sm">Memory-backed logging keeps every build traceable and ready for deployment reviews.</p></div>
-          <div class="p-6 rounded-2xl bg-slate-800/80 border border-slate-700"><h3 class="text-lg font-semibold mb-2">Heartbeat Monitoring</h3><p class="text-gray-400 text-sm">Cron-driven readiness checks confirm the system (and pilot) is mission-ready before we accept a job.</p></div>
-          <div class="p-6 rounded-2xl bg-slate-800/80 border border-slate-700"><h3 class="text-lg font-semibold mb-2">Carbon Fiber Structure</h3><p class="text-gray-400 text-sm">Superior strength-to-weight.</p></div>
-          <div class="p-6 rounded-2xl bg-slate-800/80 border border-slate-700"><h3 class="text-lg font-semibold mb-2">Advanced Avionics</h3><p class="text-gray-400 text-sm">BVLOS & obstacle avoidance.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-frame section-full relative min-h-[100vh] flex items-center justify-center text-center overflow-hidden">
-      <div class="parallax-layer" data-parallax data-speed="1.5" data-scale-portrait="0.82" data-scale-landscape="1" data-overscanx-portrait="12%" data-overscany-portrait="32%" style="--overscan:18%; background-image:url('./C5.jpg');"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-slate-900/60 to-slate-900/30"></div>
-      <div class="relative z-10 max-w-4xl px-6">
-        <h2 class="text-4xl font-bold mb-6">Why InSky</h2>
-        <p class="text-xl mb-8 text-gray-200">We treat every heavy-lift mission as a tracked process: telemetry, memory logs, heartbeat cron verification, and human pilots who keep the promise. That discipline is what lets us deliver 100 kg payloads on demand.</p>
-        <a href="#contact" class="inline-flex items-center justify-center text-lg px-8 py-4 rounded-xl bg-white text-slate-900 hover:bg-gray-100 font-semibold">Lock in a monitored mission</a>
-      </div>
-    </section>
-
-    <section class="section-frame section-full relative min-h-[100vh] flex items-center justify-center text-center overflow-hidden">
-      <div class="parallax-layer" data-parallax data-speed="1.2" data-scale-portrait="0.82" data-scale-landscape="1" data-overscanx-portrait="12%" data-overscany-portrait="32%" style="--overscan:18%; background-image:url('./C6.jpg');"></div>
-      <div class="absolute inset-0 bg-slate-900/50"></div>
-      <div class="mx-auto max-w-screen-xl px-4 py-24 lg:py-32 relative z-10 text-center">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6">You're Not Just Buying a Drone</h2>
-        <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto">You're commissioning a precision tool, tailored to your mission. We work with select clients who value custom engineering, honest lead times, and technical depth.</p>
-        <div class="grid md:grid-cols-2 gap-8 text-left max-w-5xl mx-auto">
-          <div><h3 class="text-2xl font-semibold mb-3">🔧 Expert-Led Engineering</h3><p class="text-base opacity-90">Our team includes former aerospace engineers, airline pilots, and embedded systems experts. We design and test every part of your aircraft — in-house.</p></div>
-          <div><h3 class="text-2xl font-semibold mb-3">💳 Structured Prepayment</h3><p class="text-base opacity-90">Projects begin with a 40% advance payment. Remaining balance is due at delivery. Payment plans available for qualified buyers.</p></div>
-          <div><h3 class="text-2xl font-semibold mb-3">📐 Collaborative Design</h3><p class="text-base opacity-90">We listen, iterate, and adapt your drone around your payload, terrain, and regulatory path. You're not choosing from a shelf — you're specifying an outcome.</p></div>
-          <div><h3 class="text-2xl font-semibold mb-3">⏳ Realistic Delivery</h3><p class="text-base opacity-90">Most systems ship in 8–16 weeks depending on complexity. Timelines are part of every signed agreement.</p></div>
+        <div class="card">
+          <span class="eyebrow">Future heavy-lift direction</span>
+          <h2>InSky Hevi™</h2>
+          <p>Hevi is InSky’s advanced heavy-lift direction: a platform in development for industrial payload transport, rugged-terrain logistics, emergency support, and other large-payload missions.</p>
+          <p>Public positioning for Hevi currently centers on a <strong>200 kg payload target</strong> for useful and reliable operation.</p>
+          <a class="cta secondary" href="./hevi.html">Explore Hevi</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer id="contact" class="bg-slate-900 text-white py-8 border-t border-slate-800">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="grid md:grid-cols-5 gap-4">
-        <div>
-          <h3 class="text-xl font-bold mb-4">InSky</h3>
-          <p class="text-gray-400">Advanced aerial platforms built for real heavy lifting.</p>
-        </div>
-        <div>
-          <h4 class="font-semibold mb-4">Applications</h4>
-          <ul class="space-y-2 text-gray-400">
-            <li><a href="#applications" class="hover:text-white">Heavy Cargo</a></li>
-            <li><a href="#applications" class="hover:text-white">Emergency Response</a></li>
-            <li><a href="#applications" class="hover:text-white">Special Missions</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-semibold mb-4">Platform</h4>
-          <ul class="space-y-2 text-gray-400">
-            <li><a href="#platform" class="hover:text-white">Hevi System</a></li>
-            <li><a href="#platform" class="hover:text-white">Portable Variant</a></li>
-            <li><a href="legal.html" class="hover:text-white">Legal Platform</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-semibold mb-4">Legal</h4>
-          <ul class="space-y-2 text-gray-400">
-            <li><a href="terms.html" class="hover:text-white">Terms &amp; Conditions</a></li>
-            <li><a href="privacy.html" class="hover:text-white">Privacy Policy</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-semibold mb-4">Contact</h4>
-          <form action="contact.php" method="POST" class="space-y-3">
-            <input type="text" name="name" placeholder="Name" class="w-full rounded-lg bg-slate-800 border border-slate-700 px-3 py-2" required>
-            <input type="email" name="email" placeholder="Email" class="w-full rounded-lg bg-slate-800 border border-slate-700 px-3 py-2" required>
-            <textarea name="message" rows="3" placeholder="Tell us about your mission" class="w-full rounded-lg bg-slate-800 border border-slate-700 px-3 py-2" required></textarea>
-            <input type="text" name="company" style="display:none" tabindex="-1" autocomplete="off">
-            <button type="submit" class="w-full inline-flex items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 px-4 py-2 font-medium">Request Deployment Review</button>
-          </form>
-          <p class="text-xs text-gray-400/75 mt-2">Every request is routed through our heartbeat cron so we can confirm availability before we reply.</p>
-          <p class="text-xs text-gray-400/90 text-right">NDA available on request.</p>
-        </div>
+  <footer id="contact" class="footer">
+    <div class="container footer-grid">
+      <div>
+        <span class="eyebrow">Discuss your mission</span>
+        <h2>Start the right conversation</h2>
+        <p>If you are evaluating a UAV platform for payload, inspection, specialty operations, public-safety use, or early deployment opportunities, contact InSky to discuss mission fit.</p>
+        <p class="small">We review mission inquiries directly and follow up where there is a strong fit for InSky’s current platform capabilities and development direction.</p>
       </div>
-      <div class="border-t border-slate-800 mt-8 pt-8 text-center text-gray-400">
-        <p class="text-xs text-gray-400/90 mb-3">* BVLOS operations require regulatory approval in most regions. Performance varies with configuration, environment, and payload.</p>
-        <p class="text-xs text-gray-400/90 mb-3">We respond within one heartbeat cycle (≈30 minutes) and route every request through our cron-backed ops stack.</p>
-        <p>&copy; 2025 InSky. All rights reserved. Design by Dochev</p>
+      <div class="card">
+        <script>if(new URLSearchParams(location.search).get('sent')==='1'){document.write('<div class="notice">Thanks—your message was sent. We’ll reply shortly.</div>');}</script>
+        <form action="contact.php" method="POST">
+          <input type="text" name="name" placeholder="Name" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <textarea name="message" placeholder="What mission are you trying to accomplish? What payload or equipment do you need to carry? Where will the system operate?" required></textarea>
+          <input type="text" name="company" tabindex="-1" autocomplete="off" style="display:none">
+          <button class="cta" type="submit">Discuss a mission</button>
+        </form>
       </div>
     </div>
   </footer>
-
-  <button id="configToggle" class="fixed right-0 top-auto bottom-48 transform-none md:top-1/2 md:-translate-y-1/2 md:bottom-auto z-[60] inline-flex items-center whitespace-nowrap bg-white/10 hover:bg-white/20 text-white border border-white/20 px-3 py-2 rounded-l-xl backdrop-blur-md shadow h-auto" aria-controls="configPanel" aria-expanded="false">Configure</button>
-
-  <aside id="configPanel" class="fixed top-0 right-0 h-full w-[94vw] md:w-[560px] bg-slate-900/95 border-l border-white/10 backdrop-blur z-[70] translate-x-full transition-transform duration-500 will-change-transform overflow-y-auto">
-    <div class="p-6">
-      <div class="flex items-center justify-between mb-4">
-        <h3 class="text-xl font-semibold">UAV Quick Configuration</h3>
-        <button id="configClose" class="inline-flex items-center justify-center rounded-md border border-white/20 px-2 py-1 text-gray-200 hover:bg-white/10">Close ✕</button>
-      </div>
-      <p class="text-gray-300 mb-6 text-sm">Tell us what you need and we’ll recommend a configuration. This is not a quotation or sales contract.</p>
-      <div id="cfgNotice" class="hidden mb-4 rounded-md border px-3 py-2 text-sm"></div>
-      <form action="config.php" method="POST" class="space-y-6">
-        <input type="text" name="company_trap" autocomplete="off" tabindex="-1" class="hidden" style="display:none !important">
-        <fieldset class="border border-slate-700/70 rounded-lg p-4 bg-slate-800/30">
-          <legend class="px-1 text-lg font-light text-gray-100">1. Client Information</legend>
-          <label class="block mb-3">Company / Name
-            <input type="text" name="company" required class="w-full mt-1 p-2 rounded bg-slate-900/60 border border-slate-700">
-          </label>
-          <label class="block mb-3">Contact Person
-            <input type="text" name="contact" class="w-full mt-1 p-2 rounded bg-slate-900/60 border border-slate-700">
-          </label>
-          <label class="block mb-3">Email
-            <input type="email" name="email" required class="w-full mt-1 p-2 rounded bg-slate-900/60 border border-slate-700">
-          </label>
-          <label class="block mb-3">Phone
-            <input type="tel" name="phone" class="w-full mt-1 p-2 rounded bg-slate-900/60 border border-slate-700">
-          </label>
-          <label class="block">Primary Application
-            <select name="application" required class="w-full mt-1 p-2 rounded bg-slate-900/60 border border-slate-700">
-              <option value="">--Please Select--</option>
-              <option>Mapping & Survey</option>
-              <option>Industrial Inspection</option>
-              <option>Agriculture</option>
-              <option>Delivery / Logistics</option>
-              <option>Security / Public Safety</option>
-              <option>Other</option>
-            </select>
-          </label>
-        </fieldset>
-        <fieldset class="border border-slate-700/70 rounded-lg p-4 bg-slate-800/30">
-          <legend class="px-1 text-lg font-light text-gray-100">2. UAV Preferences</legend>
-          <label class="block mb-3">Payload Capacity
-            <select name="payload" class="w-full mt-1 p-2 rounded bg-slate-900/60 border border-slate-700">
-              <option value="">--Please Select--</option>
-              <option>Up to 50 kg</option>
-              <option>Up to 100 kg</option>
-              <option>Up to 200 kg</option>
-              <option>Other</option>
-            </select>
-          </label>
-          <label class="block mb-3">Flight Endurance
-            <select name="endurance" class="w-full mt-1 p-2 rounded bg-slate-900/60 border border-slate-700">
-              <option value="">--Please Select--</option>
-              <option>15–30 min</option>
-              <option>30–60 min</option>
-              <option>Over 60 min</option>
-              <option>Other</option>
-            </select>
-          </label>
-          <label class="block mb-3">Operational Range
-            <select name="range" class="w-full mt-1 p-2 rounded bg-slate-900/60 border border-slate-700">
-              <option value="">--Please Select--</option>
-              <option>&lt; 10 km</option>
-              <option>10–30 km</option>
-              <option>&gt; 30 km</option>
-              <option>Other</option>
-            </select>
-          </label>
-          <label class="block mb-3">Obstacle Avoidance
-            <select name="obstacle" class="w-full mt-1 p-2 rounded bg-slate-900/60 border border-slate-700">
-              <option value="">--Please Select--</option>
-              <option>None</option>
-              <option>Forward Sensors</option>
-              <option>320° / Omnidirectional Sensors</option>
-            </select>
-          </label>
-          <label class="block mb-3">Propulsion
-            <select name="propulsion" class="w-full mt-1 p-2 rounded bg-slate-900/60 border border-slate-700">
-              <option value="">--Please Select--</option>
-              <option>Battery</option>
-              <option>Hybrid</option>
-              <option>Tethered</option>
-              <option>Not sure</option>
-            </select>
-          </label>
-          <label class="block">Payload / Mission Kit
-            <select name="payload_kit[]" multiple class="w-full mt-1 p-2 rounded bg-slate-900/60 border border-slate-700">
-              <option>Camera (EO/IR)</option>
-              <option>LiDAR</option>
-              <option>Multispectral</option>
-              <option>Delivery Basket</option>
-              <option>Other</option>
-            </select>
-            <small class="text-gray-400">Hold Ctrl / Cmd to select multiple</small>
-          </label>
-        </fieldset>
-        <fieldset class="border border-slate-700/70 rounded-lg p-4 bg-slate-800/30">
-          <legend class="px-1 text-lg font-light text-gray-100">3. Optional Considerations</legend>
-          <div class="mb-3">
-            <div class="font-medium mb-2">Training Required?</div>
-            <label class="inline-flex items-center mr-6"><input type="radio" name="training" value="Yes" class="mr-2"> Yes</label>
-            <label class="inline-flex items-center"><input type="radio" name="training" value="No" class="mr-2"> No</label>
-          </div>
-          <label class="block mb-3">Support Level Desired
-            <select name="support" class="w-full mt-1 p-2 rounded bg-slate-900/60 border border-slate-700">
-              <option>Standard</option>
-              <option>Premium</option>
-              <option>Not sure</option>
-            </select>
-          </label>
-          <label class="block">Certifications / Regulatory Notes
-            <textarea name="regulatory" rows="3" class="w-full mt-1 p-2 rounded bg-slate-900/60 border border-slate-700"></textarea>
-          </label>
-        </fieldset>
-        <fieldset class="border border-slate-700/70 rounded-lg p-4 bg-slate-800/30">
-          <legend class="px-1 text-lg font-light text-gray-100">4. Notes / Comments</legend>
-          <textarea name="comments" rows="4" placeholder="Specific needs, payloads, terrain, regulations, etc." class="w-full mt-1 p-2 rounded bg-slate-900/60 border border-slate-700"></textarea>
-        </fieldset>
-        <p class="text-xs text-gray-400">This form is for initial requirements gathering only and does not create any obligations for either party.</p>
-        <div class="text-center">
-          <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-light">Submit Requirements</button>
-        </div>
-      </form>
-    </div>
-  </aside>
-
-  <div id="popup" class="popup-toast" role="dialog" aria-live="polite" aria-label="Site notice">
-    <div class="popup-card">
-      <button class="popup-close" aria-label="Close" onclick="closePopup()">&times;</button>
-      <strong>We don't use chatbots.</strong><br><br>
-      Have a question? Tell us about your mission in the contact form at the bottom or configure right above.
-    </div>
-  </div>
-
-  <script>
-    (() => {
-      const els = Array.from(document.querySelectorAll('[data-parallax]'));
-      if (!els.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      const mq = window.matchMedia('(orientation: portrait)');
-      let ticking = false;
-      function applyLayout(){
-        const portrait = mq.matches;
-        for (const bg of els){
-          const scale = portrait ? parseFloat(bg.dataset.scalePortrait || '0.82') : parseFloat(bg.dataset.scaleLandscape || '1');
-          bg.style.setProperty('--scale', isFinite(scale) ? scale : 1);
-          if (portrait){
-            bg.style.setProperty('--overscanX', bg.dataset.overscanxPortrait || '12%');
-            bg.style.setProperty('--overscanY', bg.dataset.overscanyPortrait || '32%');
-          } else {
-            bg.style.removeProperty('--overscanX');
-            bg.style.removeProperty('--overscanY');
-          }
-        }
-      }
-      function update(){
-        const vh = window.innerHeight;
-        for(const bg of els){
-          const speed = parseFloat(bg.dataset.speed || '0.3');
-          const parent = bg.parentElement;
-          const rect = parent.getBoundingClientRect();
-          if (rect.bottom < 0 || rect.top > vh) continue;
-          const progress = (vh - rect.top) / (vh + rect.height) - 0.5;
-          const BASE = 800;
-          const bias = parseFloat(bg.dataset.bias || '0');
-          const offset = parseFloat(bg.dataset.offset || '0');
-          const y = (progress + bias) * BASE * speed + offset;
-          bg.style.setProperty('--tY', y.toFixed(2) + 'px');
-        }
-        ticking = false;
-      }
-      function onScroll(){ if (!ticking){ requestAnimationFrame(update); ticking = true; } }
-      mq.addEventListener ? mq.addEventListener('change', ()=>{ applyLayout(); update(); }) : mq.addListener(()=>{ applyLayout(); update(); });
-      addEventListener('resize', ()=>{ applyLayout(); update(); });
-      addEventListener('scroll', onScroll, {passive:true});
-      applyLayout();
-      update();
-    })();
-  </script>
-
-  <script>
-    (()=>{
-      const btn = document.getElementById('specsToggle');
-      const panel = document.getElementById('specsPanel');
-      const closeBtn = document.getElementById('specsClose');
-      if(!btn || !panel) return;
-      const toggle = ()=> panel.classList.toggle('translate-x-full');
-      btn.addEventListener('click', toggle);
-      closeBtn && closeBtn.addEventListener('click', toggle);
-    })();
-  </script>
-
-  <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    if (menuBtn && mobileNav) menuBtn.addEventListener('click', ()=> mobileNav.classList.toggle('hidden'));
-  </script>
-
-  <script>
-    if (new URLSearchParams(location.search).get('sent') === '1') {
-      const form = document.querySelector('#contact form');
-      if (form) {
-        const note = document.createElement('p');
-        note.className = 'mt-3 text-green-400';
-        note.textContent = 'Thanks—your message was sent. We’ll reply shortly.';
-        form.prepend(note);
-      }
-    }
-  </script>
-
-  <script>
-    (() => {
-      const toggleBtn = document.getElementById('configToggle');
-      const closeBtn  = document.getElementById('configClose');
-      const panel     = document.getElementById('configPanel');
-      const notice    = document.getElementById('cfgNotice');
-      if (!toggleBtn || !panel) return;
-      function openPanel() { panel.classList.remove('translate-x-full'); toggleBtn.setAttribute('aria-expanded', 'true'); }
-      function closePanel() { panel.classList.add('translate-x-full'); toggleBtn.setAttribute('aria-expanded', 'false'); }
-      toggleBtn.addEventListener('click', openPanel);
-      closeBtn && closeBtn.addEventListener('click', closePanel);
-      const cfg = new URLSearchParams(location.search).get('cfg');
-      if (cfg !== null && notice) {
-        openPanel();
-        if (cfg === '1') {
-          notice.textContent = 'Thanks—your configuration was submitted. We’ll reach out shortly.';
-          notice.className = 'mb-4 rounded-md border border-green-400/50 bg-green-500/10 text-green-300 px-3 py-2 text-sm';
-        } else {
-          notice.textContent = 'Sorry—there was a problem sending your configuration. Please try again.';
-          notice.className = 'mb-4 rounded-md border border-red-400/50 bg-red-500/10 text-red-300 px-3 py-2 text-sm';
-        }
-      }
-    })();
-  </script>
-
-  <script>
-    (function () {
-      const header = document.querySelector('header');
-      if (!header) return;
-      function setHeaderVar() {
-        const h = header.offsetHeight || 0;
-        document.documentElement.style.setProperty('--header-h', (h + 8) + 'px');
-      }
-      function scrollWithOffset(sel) {
-        const el = document.querySelector(sel);
-        if (!el) return;
-        const h = (header.offsetHeight || 0) + 8;
-        const y = window.pageYOffset + el.getBoundingClientRect().top - h;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      }
-      document.addEventListener('click', (e) => {
-        const a = e.target.closest('a[href^="#"]');
-        if (!a) return;
-        const href = a.getAttribute('href');
-        if (!href || href === '#') return;
-        if (document.querySelector(href)) {
-          e.preventDefault();
-          scrollWithOffset(href);
-        }
-      });
-      window.addEventListener('load', () => {
-        setHeaderVar();
-        if (location.hash && document.querySelector(location.hash)) {
-          setTimeout(() => scrollWithOffset(location.hash), 0);
-        }
-      });
-      window.addEventListener('resize', setHeaderVar);
-      if (document.fonts && document.fonts.addEventListener) {
-        document.fonts.addEventListener('loadingdone', setHeaderVar);
-      }
-    })();
-  </script>
-
-  <script>
-    (function () {
-      const el = document.getElementById('popup');
-      if (!el) return;
-      function show(){ el.classList.add('show'); }
-      function hide(){ el.classList.remove('show'); }
-      window.closePopup = hide;
-      window.addEventListener('load', function () {
-        setTimeout(show, 25000);
-      });
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') hide();
-      });
-    })();
-  </script>
 </body>
 </html>

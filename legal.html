@@ -3,147 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>InSky Legal — Sub-55 lb Heavy Mission Platform</title>
-  <meta name="description" content="Legal — a FAR Part 107 friendly heavy drone platform that outperforms the Freefly AltaX in the sub-55 lb category." />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400&display=swap" rel="stylesheet">
-
-  <style>
-    body{ font-family: 'Titillium Web', 'Segoe UI', sans-serif; background:#030712; color:#fff; }
-    .font-bank{ font-family: "BankGothic LT BT", "Bank Gothic", "BankGothic Md BT", "BankGothic", "Michroma", "Orbitron", "Eurostile", sans-serif; }
-    .section-divider{ border-top:1px solid rgba(255,255,255,0.1); }
-    a { color:#81E6D9; }
-    .hero-bg{ background-image:url('./assets/legal-hero.png'); background-size: cover; background-position:center; }
-  </style>
+  <title>InSky Legal — Compact High-Capability Professional UAV</title>
+  <meta name="description" content="InSky Legal is a compact high-capability professional UAV platform for payload, inspection, imaging, and specialized field operations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <header class="border-b border-white/10 bg-slate-900/80 backdrop-blur-fixed sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3" aria-label="InSky Home">
-        <img src="./logo-insky2.png" alt="InSky" class="h-10 w-auto select-none" />
-      </a>
-      <nav class="hidden md:flex gap-6 text-gray-300 text-sm tracking-wide">
-        <a href="index.html#platform" class="hover:text-white">Hevi Platform</a>
-        <a href="index.html#applications" class="hover:text-white">Applications</a>
-        <a href="index.html#technology" class="hover:text-white">Technology</a>
-        <a href="index.html#contact" class="hover:text-white">Contact</a>
-      </nav>
-      <a href="index.html#contact" class="hidden md:inline-flex items-center gap-2 rounded-full bg-blue-600 hover:bg-blue-700 px-4 py-2 text-sm font-medium">Back to InSky</a>
-      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-lg border border-white/10 px-3 py-2 text-gray-200">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
-      </button>
-    </div>
-    <div id="mobileNav" class="md:hidden hidden border-t border-white/10">
-      <nav class="px-4 py-3 flex flex-col gap-3 text-white text-base">
-        <a href="index.html#platform" class="hover:text-blue-100">Hevi Platform</a>
-        <a href="index.html#applications" class="hover:text-blue-100">Applications</a>
-        <a href="index.html#technology" class="hover:text-blue-100">Technology</a>
-        <a href="index.html#contact" class="hover:text-blue-100">Contact</a>
-      </nav>
-    </div>
-  </header>
-
+  <header class="site-header"><div class="container nav"><a href="./index.html" class="brand"><img src="./logo-insky2.png" alt="InSky"></a><nav class="nav-links"><a href="./index.html">Home</a><a href="./performance.html">Performance</a><a href="./hevi.html">Hevi</a><a href="./applications.html">Applications</a><a href="./index.html#contact">Contact</a></nav><a class="cta" href="./index.html#contact">Discuss a mission</a></div></header>
   <main>
-    <section class="hero-bg min-h-[80vh] flex items-center" style="background-color:#020816;">
-      <div class="max-w-5xl mx-auto px-6 py-20 text-left bg-gradient-to-r from-slate-900/80 to-slate-900/30 rounded-3xl border border-white/20 backdrop-blur-xl">
-        <p class="text-sm uppercase tracking-[0.4em] text-blue-200 mb-3">Legal platform</p>
-        <h1 class="text-4xl md:text-6xl font-bank mb-6 leading-tight">Legal keeps 55 lb missions compliant, monitored, and ready for tactical deployment.</h1>
-        <p class="text-lg text-gray-200 mb-4">Designed to deliver AltaX-level agility while staying inside the FAR Part 107 <strong>55 lb (25 kg) ready-to-fly cap</strong>, Legal lets teams reuse 12 mm rails and Freefly's Toad-in-the-Hole connector without rebuilding their payload stacks.</p>
-        <p class="text-sm text-gray-400 mb-6">Every build is logged in our memory system, and heartbeat cron jobs validate compliance before we ship any aircraft—so the legal story you read here matches what operators fly.</p>
-        <div class="flex flex-wrap gap-3 text-sm text-gray-200">
-          <span class="px-3 py-2 rounded-full border border-white/20 bg-white/5">9.9 kg empty weight</span>
-          <span class="px-3 py-2 rounded-full border border-white/20 bg-white/5">~15 kg ready for payload</span>
-          <span class="px-3 py-2 rounded-full border border-white/20 bg-white/5">44 kg MTOW (waiver Optional)</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="max-w-6xl mx-auto px-6 py-16 space-y-12">
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="space-y-4">
-          <h2 class="text-3xl font-bold">Sportscar performance that respects the 55 lb rule.</h2>
-          <p class="text-gray-300">Legal is a platform built for pilots who need the agility of the AltaX while staying inside Part 107 unless a waiver is in place. It’s lightweight enough for rapid deployment and still delivers endurance gains when the mission allows higher MTOW.</p>
-          <p class="text-sm text-gray-400">Think of it as a dual-mode aircraft—fully compliant when needed, and performance-forward when the mission demands more. The unused lift margin translates directly into extra endurance.</p>
-          <p class="text-xs text-blue-200">We capture every regulatory detail in the same memory stack that keeps the main Heavy Lift page ready for mission briefings.</p>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-6 backdrop-blur-xl space-y-3">
-          <h3 class="text-lg font-semibold text-blue-200">Quick facts</h3>
-          <ul class="text-sm text-gray-200 space-y-2">
-            <li><strong>Frame:</strong> 9900 g without battery, <span class="text-blue-200">< 15 kg ready for payload</span>.</li>
-            <li><strong>Rating:</strong> Under 55 lb takeoff weight; MTOW up to 44 kg when permitted.</li>
-            <li><strong>Accessories:</strong> 12 mm rail attachments + Freefly's Toad-in-the-Hole connector on mission bays.</li>
-            <li><strong>Mission kits:</strong> Speed rail, LiDAR, EO/IR, delivery baskets.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div class="space-y-4">
-          <h3 class="text-2xl font-semibold">Built to play in the AltaX ecosystem.</h3>
-          <p class="text-gray-300">Legal interfaces directly with the Freefly accessory ecosystem, so you can attach any 12 mm rail kit or Freefly's Toad-in-the-Hole connectors without rework. We attribute the trademark to Freefly to keep the message clear—this platform is compatible with their industry-standard mounting hardware without implying endorsement.</p>
-          <p class="text-sm text-gray-400">You get the freedom to swap payloads mid-mission while keeping a consistent feel for pilots who already know AltaX.</p>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/10 p-6">
-          <img src="./assets/legal-angled.png" alt="Legal drone render" class="w-full rounded-2xl shadow-2xl" />
-        </div>
-      </div>
-    </section>
-
-    <section class="bg-slate-900/60 border-y border-white/10 py-16">
-      <div class="max-w-5xl mx-auto px-6 space-y-6">
-        <h3 class="text-3xl font-bold">Performance envelope</h3>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="space-y-3 text-sm text-gray-200">
-            <p><strong>Empty weight:</strong> 9900 g</p>
-            <p><strong>Ready weight:</strong> up to 15 kg depending on battery choice</p>
-            <p><strong>Maximum takeoff weight:</strong> 44 kg (waiver required for operations above 55 lb)</p>
-            <p><strong>Endurance:</strong> Extra lift capacity converts into longer sorties when payload is limited</p>
-            <p><strong>Payload interface:</strong> 12 mm rail, Freefly's Toad-in-the-Hole, modular mission bays</p>
-          </div>
-          <div class="space-y-3 text-sm text-gray-200">
-            <p><strong>Propulsion:</strong> High-efficiency dual coaxial / quad setups (battery or hybrid)</p>
-            <p><strong>Avionics:</strong> RTK, redundant IMUs, optional parachute</p>
-            <p><strong>Transport case:</strong> Folding arms + quick-attach mission kits</p>
-            <p><strong>Operational temp:</strong> -20° to 45° C</p>
-            <p><strong>Ingress protection:</strong> IP54</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
-      <div class="space-y-4">
-        <h3 class="text-3xl font-bold">Engineering transparency</h3>
-        <p class="text-gray-300">Legal is not off-the-shelf. Every bracket, rail, and connector was designed to balance strength with the FAR 107 cycle. The render captures the frame we’ll ship to customers, while the wireframe image shows the internal ribs and access points that keep maintenance fast.</p>
-        <p class="text-sm text-gray-500">All customers receive a detailed setup manual that matches the photo catalogue you see here.</p>
-      </div>
-      <div class="grid gap-4">
-        <img src="./assets/legal-side.png" alt="Legal render" class="rounded-3xl border border-white/10 shadow-2xl" />
-        <img src="./assets/legal-wireframe.jpg" alt="Legal wireframe" class="rounded-3xl border border-white/10 shadow-2xl" />
-      </div>
-    </section>
-
-    <section class="max-w-6xl mx-auto px-6 py-16 text-center">
-      <p class="text-sm uppercase tracking-[0.5em] text-blue-200 mb-4">Need a tailored legal solution?</p>
-      <h3 class="text-3xl font-bold mb-4">Tell us about your mission</h3>
-      <p class="text-gray-300 mb-8">We’ll map Legal into your workflow, connect it with your payload kits, and help scope any regulatory needs.</p>
-      <p class="text-xs text-gray-400 mb-6">Every request here is routed through the same heartbeat cron that keeps our deployments predictable.</p>
-      <a href="index.html#contact" class="inline-flex items-center justify-center gap-2 rounded-full bg-white text-slate-900 px-6 py-3 font-semibold hover:bg-gray-100">Go to Contact Form</a>
-    </section>
+    <section class="page-hero"><div class="container"><div><span class="eyebrow">InSky Legal™</span><h1>A compact high-capability professional UAV platform</h1><p class="lead">Designed for payload, inspection, imaging, and specialized field operations.</p><p>Legal is InSky’s lead near-term commercial platform. It is designed to combine low structural weight, strong useful payload capability, and a broad mission envelope in a compact professional aircraft.</p><div class="subnav"><span class="pill">Payload, inspection, imaging</span><span class="pill">Compact deployment</span><span class="pill">Professional workflows</span></div></div><div class="page-art"><img src="./assets/legal-angled.png" alt="InSky Legal render"></div></div></section>
+    <section class="section"><div class="container two-col"><div><span class="eyebrow">Why it matters</span><h2>More useful payload in a compact aircraft</h2><p>Many professional UAV platforms force a compromise between compact size, useful payload, and mission flexibility. Legal is being developed to reduce that compromise and support more capable field operations in a compact platform.</p><p>It is intended for operators who need a compact aircraft that can carry meaningful payload, support serious field workflows, and adapt to multiple mission profiles without being locked into a narrow equipment stack.</p></div><div class="card"><h3>Mission fit</h3><ul class="list"><li>Infrastructure inspection</li><li>Public safety support</li><li>Cinematography and specialty payload work</li><li>Research operations</li><li>Specialized logistics</li><li>Field operations requiring a compact high-capability platform</li></ul></div></div></section>
+    <section class="section"><div class="container"><span class="eyebrow">Key figures</span><h2>Specifications</h2><div class="specs"><div class="spec"><strong>Empty weight</strong><span>9.8 kg</span></div><div class="spec"><strong>Ready-to-fly without payload</strong><span>14.6 kg</span></div><div class="spec"><strong>FAR Part 107 payload</strong><span>10.3 kg</span></div><div class="spec"><strong>Absolute maximum payload</strong><span>30 kg</span></div><div class="spec"><strong>Endurance at 30 kg payload</strong><span>12 min</span></div><div class="spec"><strong>Endurance at 20 kg payload</strong><span>18 min</span></div><div class="spec"><strong>Endurance at 10 kg payload</strong><span>32 min</span></div><div class="spec"><strong>Endurance at 5 kg payload</strong><span>44 min</span></div><div class="spec"><strong>Endurance empty</strong><span>70 min</span></div></div></div></section>
+    <section class="section"><div class="container two-col"><div><span class="eyebrow">Operating framework</span><h2>Capability beyond the standard threshold</h2><p>Legal is designed with capability beyond the standard 55 lb U.S. small-UAS operating threshold.</p><p>In the United States, operations above that threshold require the appropriate regulatory exemption, including 44807 where applicable. That boundary should be understood as a regulatory operating limit, not as a statement of the aircraft’s underlying capability.</p></div><div><span class="eyebrow">Payload and integration</span><h2>Professional workflow compatibility</h2><p>Legal is designed as a professional platform with meaningful useful payload, compact deployment, modular mission integration, and compatibility with established professional accessory workflows.</p><p>Depending on mission requirements, the platform direction includes battery, hybrid, and tethered power approaches.</p></div></div></section>
+    <section class="section"><div class="container band"><span class="eyebrow">Commercial direction</span><h2>Built for serious market validation</h2><p>Legal’s early commercial path is centered on test validation, showroom and demo readiness, distributor and mission-fit conversations, and the conversion of serious interest into reservations.</p><a class="cta" href="./index.html#contact">Discuss a mission</a></div></section>
   </main>
-
-  <footer class="bg-slate-900 border-t border-white/10 px-6 py-12 text-center text-sm text-gray-400">
-    <p>Legal platform inquiries — InSky Advanced Systems. NDA available on request.</p>
-    <p class="text-xs text-gray-400 mt-2">Requests are tracked through the heartbeat cron so we can confirm availability before replying.</p>
-    <p class="mt-3">© 2025 InSky. This page shares the same engineering DNA as the Hevi platform while staying focused on the sub-55 lb arena.</p>
-  </footer>
-
-  <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    if (menuBtn && mobileNav) menuBtn.addEventListener('click', ()=> mobileNav.classList.toggle('hidden'));
-  </script>
 </body>
 </html>
